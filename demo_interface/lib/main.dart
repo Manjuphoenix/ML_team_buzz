@@ -3,24 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
-  runApp(MyPage());
+  runApp(MyApp());
 }
 
-class MyPage extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
   _MyPageState createState() => _MyPageState();
 }
 
-class _MyPageState extends State<MyPage> {
+class _MyPageState extends State<MyApp> {
   /// Variables
-  late File imageFile;
+  File imageFile = File(
+      'assets/What-Are-Plants.jpg'); //Add the Path to default image from assets later
 
   /// Widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Image Picker"),
+          title: const Text("Image Picker"),
         ),
         body: Container(
             child: imageFile == (null)
@@ -31,22 +32,22 @@ class _MyPageState extends State<MyPage> {
                       children: <Widget>[
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(128, 128, 0, 10)),
+                              primary: const Color.fromRGBO(128, 128, 0, 10)),
                           onPressed: () {
                             _getFromGallery();
                           },
-                          child: Text("PICK FROM GALLERY"),
+                          child: const Text("PICK FROM GALLERY"),
                         ),
                         Container(
                           height: 40.0,
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(128, 128, 128, 10)),
+                              primary: const Color.fromARGB(128, 128, 128, 10)),
                           onPressed: () {
                             _getFromCamera();
                           },
-                          child: Text("PICK FROM CAMERA"),
+                          child: const Text("PICK FROM CAMERA"),
                         )
                       ],
                     ),
