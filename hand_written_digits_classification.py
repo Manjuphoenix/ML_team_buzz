@@ -22,7 +22,7 @@ print(device)
 transformation = torchvision.transforms.ToTensor()
 transformation = T.Compose([
     T.ToTensor(),
-    T.Normalize((0.1307,), (0.3081,))
+    # T.Normalize((0.1307,), (0.3081,))
 ])
 
 num_class = 10
